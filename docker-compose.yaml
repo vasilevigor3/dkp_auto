@@ -3,14 +3,14 @@ version: '3.1'
 services:
 
   adminer:
-    container_name: adminer_bot
+    container_name: adminer_dkp_auto_bot
     image: adminer
     restart: always
     ports:
       - 8080:8080
 
   db:
-    container_name: mysql_db
+    container_name: mysql_dkp_auto_db
     image: mysql:5.6
     restart: always
     command: --init-file /db/db.sql
@@ -23,7 +23,7 @@ services:
       - 3307:3306
 
   tg_bot:
-    container_name: my_bot
+    container_name: dkp_auto_bot
     build:
       context: .
     command:
